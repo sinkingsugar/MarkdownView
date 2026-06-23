@@ -13,7 +13,8 @@ public struct MarkdownView: View {
     @Environment(\.markdownElementRenderers) private var elementRenderers
     @Environment(\.markdownViewStyle) private var markdownViewStyle
     @Environment(\.markdownFontGroup.body) private var bodyFont
-    
+    @Environment(\.markdownTextSelectionEnabled) private var textSelectionEnabled
+
     public init(_ text: String) {
         self.content = MarkdownContent(
             raw: .plainText(text)
@@ -38,6 +39,7 @@ public struct MarkdownView: View {
             )
             .erasedToAnyView()
             .font(bodyFont)
+            .markdownTextSelectionEnabledIfPossible(textSelectionEnabled)
     }
     
     @ViewBuilder

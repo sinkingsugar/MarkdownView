@@ -17,9 +17,13 @@ struct TextDestination: View {
         #### Heading 4
         
         __MarkdownView__ is built with `swift-markdown`.
-        
+
         It supports _SVG Rendering_, which is pretty great.
+
+        Try selecting this text — `.markdownTextSelection()` makes the
+        rendered Markdown selectable and copyable.
         """)
+        .markdownTextSelection()
     }
 }
 
