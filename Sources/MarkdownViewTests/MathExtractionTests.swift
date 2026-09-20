@@ -187,7 +187,7 @@ struct MathExtractionTests {
     ) -> MathPlaceholderPreprocessor.Result {
         var mathRangesResolver = MathParsableRangesResolver()
         mathRangesResolver.visit(
-            Document(
+            Markdown.Document(
                 parsing: markdown,
                 options: ParseOptions().union(.parseBlockDirectives)
             )
